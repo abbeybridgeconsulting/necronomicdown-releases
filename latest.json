@@ -9,5 +9,10 @@
   "sha256": "194df7eaf54fcb59a2433c7d7237c2a53128aee43f5c1915d281b40d35a4bb90",
   "virustotal_url": "https://www.virustotal.com/gui/file/194df7eaf54fcb59a2433c7d7237c2a53128aee43f5c1915d281b40d35a4bb90",
   "signing": "ad-hoc",
-  "notarized": false
+  "notarized": false,
+  "homebrew": {
+    "cask": "abbeybridgeconsulting/tap/necronomicdown",
+    "install_command": "brew install --cask abbeybridgeconsulting/tap/necronomicdown",
+    "tap_url": "https://github.com/abbeybridgeconsulting/homebrew-tap"
+  }
 }

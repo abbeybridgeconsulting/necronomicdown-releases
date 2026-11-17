@@ -55,7 +55,7 @@ Test the **final DMG** on another Mac if possible: mount it, drag the app to App
 3. Include the version, Apple Silicon and macOS 15 requirements, source commit, SHA-256, VirusTotal report link and first-launch instructions in the release notes. State that the app is ad hoc signed and not Apple-notarised.
 4. Publish only after testing and review. Download the published asset, verify its SHA-256 against the checksum, and test it. Do not overwrite an existing release asset: a changed file needs a new version and checksum.
 5. After publishing and verifying the download, update `latest.json` on `main` with the new version, actual asset URL, filename, SHA-256 and completed VirusTotal report URL. Keep the existing field names and accurate platform, architecture, signing and notarisation values. Validate it with `python3 -m json.tool latest.json` and commit and push it. The website can fetch `https://raw.githubusercontent.com/abbeybridgeconsulting/necronomicdown-releases/main/latest.json`; it should handle fetch errors and validate the data. Do not point it to an unverified or unpublished asset.
-6. Update the website if it does not read `latest.json`. Update the Homebrew tap's version, URL and SHA-256 once a tap exists. Until then, keep Homebrew marked coming soon.
+6. Update the website if it does not read `latest.json`. Update `Casks/necronomicdown.rb` in `~/Documents/abbeybridgeconsulting/repos/homebrew-tap` with the version, immutable download URL and SHA-256. Test the cask with Apple Silicon Homebrew, then commit and push the tap. The website can use the `homebrew` object in `latest.json` for its install command.
 
 ## GitHub account and SSH
 
