@@ -1,0 +1,13 @@
+{
+  "version": "0.1.0",
+  "channel": "beta",
+  "platform": "macOS",
+  "architecture": "arm64",
+  "minimum_macos_version": "15.0",
+  "filename": "Necronomicdown_0.1.0_aarch64.dmg",
+  "download_url": "https://raw.githubusercontent.com/abbeybridgeconsulting/necronomicdown-releases/f7ad9a883a99fc126298eeb8f861c91f10655f05/downloads/v0.1.0/Necronomicdown_0.1.0_aarch64.dmg",
+  "sha256": "194df7eaf54fcb59a2433c7d7237c2a53128aee43f5c1915d281b40d35a4bb90",
+  "virustotal_url": "https://www.virustotal.com/gui/file/194df7eaf54fcb59a2433c7d7237c2a53128aee43f5c1915d281b40d35a4bb90",
+  "signing": "ad-hoc",
+  "notarized": false
+}

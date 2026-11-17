@@ -1,5 +1,7 @@
 # How to publish a Necronomicdown beta
 
+Version 0.1.0 is stored in `downloads/v0.1.0` in Git. Future DMGs should be uploaded as GitHub Release assets. The website can read `latest.json` from the default branch for current download details.
+
 This is the checklist for the **ad hoc signed, non-notarised Apple Silicon build**. It does not require an Apple Developer membership. The app requires macOS 15 or later; Intel Macs are not supported by this build. The process is manual: there is no release automation yet.
 
 - App source: `~/Documents/abbeybridgeconsulting/repos/markdown-reader`
@@ -52,7 +54,8 @@ Test the **final DMG** on another Mac if possible: mount it, drag the app to App
 2. In the GitHub release repository, create a new release with a version tag such as `v0.1.1`, targeting its `main` branch. Mark beta releases as pre-releases. Attach the exact tested DMG and its `.sha256` file. GitHub Release assets are uploaded separately from ordinary Git commits.
 3. Include the version, Apple Silicon and macOS 15 requirements, source commit, SHA-256, VirusTotal report link and first-launch instructions in the release notes. State that the app is ad hoc signed and not Apple-notarised.
 4. Publish only after testing and review. Download the published asset, verify its SHA-256 against the checksum, and test it. Do not overwrite an existing release asset: a changed file needs a new version and checksum.
-5. Update the website with the actual release URL, version, hash, scan link and installation instructions. Update the Homebrew tap's version, URL and SHA-256 once a tap exists. Until then, keep Homebrew marked coming soon.
+5. After publishing and verifying the download, update `latest.json` on `main` with the new version, actual asset URL, filename, SHA-256 and completed VirusTotal report URL. Keep the existing field names and accurate platform, architecture, signing and notarisation values. Validate it with `python3 -m json.tool latest.json` and commit and push it. The website can fetch `https://raw.githubusercontent.com/abbeybridgeconsulting/necronomicdown-releases/main/latest.json`; it should handle fetch errors and validate the data. Do not point it to an unverified or unpublished asset.
+6. Update the website if it does not read `latest.json`. Update the Homebrew tap's version, URL and SHA-256 once a tap exists. Until then, keep Homebrew marked coming soon.
 
 ## GitHub account and SSH
 
